@@ -1,0 +1,24 @@
+{
+  "name": "travel-server",
+  "version": "1.0.0",
+  "description": "智能景点介绍服务端基于node.js+express+langchain",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test test/travelAgents.test.js test/travelServiceParsing.test.js",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "mcp": "node scripts/mcp-launcher.js"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.1.48",
+    "@langchain/openai": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "langchain": "^1.4.2",
+    "nodemon": "^3.1.14"
+  }
+}

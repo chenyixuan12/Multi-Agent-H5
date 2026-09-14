@@ -1,0 +1,22 @@
+{
+  "name": "travel-agent",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix travel-server run dev\" \"npm --prefix travel-h5 run dev\"",
+    "dev:mcp": "node 12306-mcp/build/index.js --port 8124",
+    "dev:all": "concurrently -n mcp,server,h5,requirements,route,spots,budget,synthesis,candidates -c cyan,green,magenta,yellow,blue,red,white,gray,gray \"npm run dev:mcp\" \"npm --prefix travel-server run dev\" \"npm --prefix travel-h5 run dev\" \"npm --prefix travel-agents run start -- requirements 3401\" \"npm --prefix travel-agents run start -- route 3402\" \"npm --prefix travel-agents run start -- spots 3403\" \"npm --prefix travel-agents run start -- budget 3404\" \"npm --prefix travel-agents run start -- synthesis 3405\" \"npm --prefix travel-agents run start -- candidates 3406\"",
+    "dev:client": "npm --prefix travel-h5 run dev",
+    "dev:server": "npm --prefix travel-server run dev",
+    "start:client": "npm --prefix travel-h5 run dev",
+    "start:server": "npm --prefix travel-server run dev",
+    "build:client": "npm --prefix travel-h5 run build",
+    "build:server": "npm --prefix travel-server run start",
+    "build:mcp": "npm --prefix 12306-mcp run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.4",
+    "postcss-px-to-viewport-8-plugin": "^1.2.5",
+    "vconsole": "^3.15.1"
+  }
+}

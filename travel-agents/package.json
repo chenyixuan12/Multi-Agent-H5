@@ -1,0 +1,16 @@
+{
+  "name": "travel-agents",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@langchain/core": "^1.1.48",
+    "@langchain/openai": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "travel-agent": "file:.."
+  }
+}

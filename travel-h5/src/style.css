@@ -1,0 +1,113 @@
+:root {
+  --olive-950: #30382a;
+  --olive-800: #4d5b3d;
+  --olive-700: #66734b;
+  --olive-500: #8b9968;
+  --sand-50: #fffdf8;
+  --sand-100: #faf5eb;
+  --sand-200: #f1e8d8;
+  --sand-300: #e4d7c2;
+  --orange-600: #c96837;
+  --orange-500: #dc7b46;
+  --orange-100: #f8e3d4;
+  --ink: #30362d;
+  --muted: #7d8071;
+  --line: #e2d9ca;
+  --paper: #fffaf1;
+  --card-shadow: 0 2px 4px rgba(74, 62, 43, 0.06), 0 12px 26px rgba(74, 62, 43, 0.08);
+  --card-shadow-hover: 0 4px 8px rgba(74, 62, 43, 0.08), 0 16px 30px rgba(74, 62, 43, 0.12);
+  --sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --heading: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font: 16px/1.5 var(--sans);
+  color: var(--ink);
+  background: var(--sand-100);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+html, body, #app { min-height: 100%; }
+body { margin: 0; overflow-x: hidden; background-color: var(--sand-100); color: var(--ink); }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image: repeating-linear-gradient(0deg, rgba(119, 96, 59, 0.035) 0, rgba(119, 96, 59, 0.035) 1px, transparent 1px, transparent 4px);
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+#app { position: relative; z-index: 1; }
+
+/* ---------- Mobile compatibility ---------- */
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html, body {
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input, textarea, select {
+  font-size: 16px;
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { color: var(--olive-950); font-family: var(--heading); }
+.app-container {
+  min-height: 100dvh;
+  min-height: -webkit-fill-available;
+  width: 100%;
+  max-width: 100vw;
+  padding-bottom: calc(56px + env(safe-area-inset-bottom));
+  overflow-x: hidden;
+}
+
+/* Vant theme bridge */
+:root {
+  --van-primary-color: var(--olive-700);
+  --van-success-color: #7e9560;
+  --van-warning-color: var(--orange-500);
+  --van-danger-color: #b95f49;
+  --van-text-color: var(--ink);
+  --van-text-color-2: var(--muted);
+  --van-text-color-3: #a6a293;
+  --van-background: transparent;
+  --van-background-2: var(--sand-100);
+  --van-border-color: var(--line);
+  --van-cell-background: var(--paper);
+  --van-cell-group-background: transparent;
+  --van-nav-bar-background: rgba(255, 250, 241, 0.94);
+  --van-nav-bar-title-text-color: var(--olive-950);
+  --van-nav-bar-icon-color: var(--olive-800);
+  --van-tabbar-background: rgba(255, 250, 241, 0.96);
+  --van-tabbar-item-active-color: var(--olive-700);
+  --van-button-primary-background: var(--olive-700);
+  --van-button-primary-border-color: var(--olive-700);
+}
+.van-nav-bar { border-bottom: 1px solid rgba(226, 217, 202, 0.88); box-shadow: 0 1px 8px rgba(74, 62, 43, 0.04); backdrop-filter: blur(10px); }
+.van-nav-bar__title { font-family: var(--heading); font-weight: 700; letter-spacing: 0.04em; }
+.van-notice-bar { color: var(--olive-800); background: var(--orange-100); }
+.van-tabbar { border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(74, 62, 43, 0.06); }
+.van-tabbar-item__icon { margin-bottom: 3px; }
+.van-cell-group--inset { margin: 0; overflow: hidden; border-radius: 12px; box-shadow: var(--card-shadow); }
+.van-cell { background: var(--paper); }
+.van-cell::after { border-color: var(--line); }
+.van-field__label { color: var(--muted); }
+.van-field__control { color: var(--ink); }
+.van-button--primary { box-shadow: 0 5px 12px rgba(102, 115, 75, 0.22); }
+.van-empty__description { color: var(--muted); }
+button, .van-button, .van-cell, .van-grid-item__content { transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease; }
+.van-button:active, .van-cell:active, .van-grid-item__content:active { transform: translateY(1px); }

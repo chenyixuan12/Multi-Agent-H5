@@ -1,0 +1,13 @@
+Server is running on port :http://localhost:3300
+[travel/recommend] start city=抚顺市 days=2 budget=3000
+[travel/recommend] context_ms=577ms
+[travel/recommend] model_ttfb_ms=1063ms
+[travel/recommend] poi_verification_ms=194ms
+[travel/recommend] post validation disabled; using weather-aware initial plan
+[travel/recommend] {"context_ms":577,"model_ttfb_ms":1063,"model_generation_ms":22473,"poi_verification_ms":194,"total_ms":23252}
+[travel/recommend] start city=兰州市 days=2 budget=2000
+[travel/recommend] context_ms=308ms
+[travel/recommend] model_ttfb_ms=876ms
+[travel/recommend] poi_verification_ms=169ms
+[travel/recommend] post validation disabled; using weather-aware initial plan
+[travel/recommend] {"context_ms":308,"model_ttfb_ms":876,"model_generation_ms":22932,"poi_verification_ms":169,"total_ms":23417}
